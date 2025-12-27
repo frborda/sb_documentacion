@@ -1,0 +1,3 @@
+Línea 50: la clase MSWinsockLib.Winsock del control Ws no era una clase de control cargada.
+Línea 330: la clase MSComctlLib.ImageList del control iml no era una clase de control cargada.
+Línea 364: la clase MSComctlLib.ListView del control lsv no era una clase de control cargada.
