@@ -324,36 +324,70 @@ Al cargar frmMenu
 ### Formularios de Operación
 | Formulario | Descripción |
 |------------|-------------|
-| `frmConsolaOperacion` | Consola principal de votación |
+| `FRMCONSOLAOPERACIONAEB` | Consola principal de votación |
 | `frmCrearSesion` | Crear nueva sesión |
 | `frmCambiarSesion` | Cambiar sesión activa |
 | `frmDefinirVoto` | Modificar voto de banca |
 | `frmTiempoVotacion` | Configurar tiempo de votación |
 | `frmTituloActa` | Ingresar título de acta |
 | `frmElegirPresidente` | Seleccionar presidente |
+| `frmAbstenerLegisladores` | Gestión de abstenciones por legislador |
+| `FRMABSTENCIONESNUMERICAS` | Abstenciones numéricas |
+| `frmManifestacionesVivavoz` | Manifestaciones a viva voz en actas |
+| `frmReuniones` | Gestión de reuniones por período |
 
 ### Formularios de Consulta
 | Formulario | Descripción |
 |------------|-------------|
-| `frmConsultas` | Consultas de actas |
+| `frmConsultas` | Menú de consultas |
 | `frmConsultarActa` | Ver detalle de acta |
-| `frmListarActas` | Listar actas |
-| `frmMostrarActas` | Mostrar actas |
+| `frmListarActas` | Listar actas de sesión |
+| `frmMostrarActas` | Mostrar actas por período/sesión |
+| `frmMostrarPeriodos` | Mostrar períodos legislativos |
 | `frmHistorico` | Histórico de datos |
+| `frmHistoricoCompleto` | Histórico completo de legislador |
 | `frmLogIdentificaciones` | Log de identificaciones biométricas |
-| `frmEstadisticas` | Estadísticas del sistema |
+| `frmDuplicidades` | Log de duplicidades biométricas |
+| `frmEstadisticas` | Estadísticas individuales |
+| `frmEstadisticasGenerales` | Estadísticas generales del sistema |
+| `frmListadoLegisladores` | Listado completo de legisladores |
+| `frmListadoDatosRecinto` | Datos de recinto (bancas, huellas) |
 
 ### Formularios de ABM
 | Formulario | Descripción |
 |------------|-------------|
 | `frmABMLegisladores` | ABM de legisladores |
+| `FRMALTALEGISLADOR` | Alta rápida de legislador |
 | `frmABMBloques` | ABM de bloques políticos |
+| `frmEditarBloques` | Editar bloque político |
 | `frmABMPartidos` | ABM de partidos políticos |
-| `frmABMDistritos` | ABM de distritos |
+| `FRMABMPARTIDOSPOLITICOS` | ABM partidos (versión alternativa) |
+| `frmEditarPartidos` | Editar partido político |
+| `frmABMDistritos` | ABM de distritos/provincias |
 | `frmABMMandatos` | ABM de mandatos |
 | `frmABMSecciones` | ABM de secciones |
 | `frmAdministradorLegisladores` | Administrador de legisladores |
-| `frmGestionarUsuarios` | Gestión de usuarios |
+| `FrmGestionarUsuarios` | Gestión de usuarios del sistema |
+| `ABMEstadoBanca` | ABM de estados de banca |
+
+### Formularios de Selección
+| Formulario | Descripción |
+|------------|-------------|
+| `frmSeleccionDiputado` | Selector de diputado |
+| `frmSelDistrito` | Selector de distrito |
+| `frmSelMandato` | Selector de mandato |
+| `frmSelSeccion` | Selector de sección |
+| `frmSelSecciones` | Selector múltiple de secciones |
+| `FRMSELBLOQUEPOLITICO` | Selector de bloque político |
+| `FRMSELPARTIDO` | Selector de partido |
+| `FRMSELUSUARIOS` | Selector de usuarios |
+| `FRMSELSELECCION` | Selector genérico |
+| `frmrSelLegislador` | Selector de legislador |
+| `frmElegirPeriodo` | Selector de período legislativo |
+| `frmElegirPresidenteActas` | Selector de presidente para actas |
+| `frmSeleccionarBancaProbable` | Selector de banca probable |
+| `frmBancasProbables` | Gestión de bancas probables |
+| `frmAsignarLegislador` | Asignar legislador a banca |
 
 ### Formularios de Configuración
 | Formulario | Descripción |
@@ -363,21 +397,51 @@ Al cargar frmMenu
 | `frmConfigurarUnidadBanca` | Configuración de bancas |
 | `frmEditarDatosUnidadBanca` | Editar datos de banca |
 | `frmSetearConfig` | Setear configuración |
-| `frmControlSistema` | Control del sistema |
+| `frmControlSistema` | Control del sistema (identificación por teclado) |
 | `frmAltaPeriodo` | Alta de período legislativo |
 | `frmOrdenSeleccionPresidente` | Orden de selección de presidente |
+| `frmConfigImpresionAutomatica` | Configuración de impresión automática |
+| `frmInformacionBanca` | Información detallada de banca |
+| `FRMHISTORICOBANCA` | Histórico de banca |
+
+### Formularios de Seguridad
+| Formulario | Descripción |
+|------------|-------------|
+| `frmLogin` | Inicio de sesión |
+| `FRMPASSWORD` | Gestión de contraseña |
+| `FRMPIN` | Ingreso de PIN |
+| `FRMVALIDARCLAVE` | Validación de clave |
+| `FRRMCAMBIARPASSWORD` | Cambiar contraseña |
+| `FRMUSUARIOS` | Gestión de usuarios |
+
+### Formularios de Impresión y Reportes
+| Formulario | Descripción |
+|------------|-------------|
+| `frmImpresion` | Control de impresión de actas |
+| `frmImpresoras` | Selección de impresora |
+| `frmImprimirTotalActas` | Imprimir todas las actas |
+| `frmReportesExportar` | Exportar reportes |
+| `FRMVISOR` | Visor de documentos/reportes |
 
 ### Formularios Auxiliares
 | Formulario | Descripción |
 |------------|-------------|
-| `frmLogin` | Inicio de sesión |
 | `frmMenu` | Menú principal |
 | `frmCargando` | Pantalla de carga |
 | `frmConectando` | Indicador de conexión |
 | `frmMessageBox` | Cuadro de mensaje personalizado |
-| `frmImpresion` | Gestión de impresión |
-| `frmVisor` | Visor de documentos |
 | `frmFlotante` | Ventana flotante |
+| `frmCargaImagenes` | Carga de imágenes de legisladores |
+| `frmNuevoInfo` | Nuevo registro de información |
+| `frmNuevoScan` | Nuevo escaneo biométrico |
+| `frmMantenimiento` | Modo mantenimiento |
+| `frmStatusSincroLegisladores` | Estado sincronización legisladores |
+| `frmPreABM` | Pre-menú de ABM |
+| `frmPreEstadisticas` | Pre-menú de estadísticas |
+| `frmCambiarEstado` | Cambiar estado de legislador |
+| `frmCambiarReunion` | Cambiar reunión |
+| `FRMADMINISTRACIONCARTEL` | Administración de cartel electrónico |
+| `FRMMENSAJESCARTEL` | Mensajes para cartel electrónico |
 
 ## Funciones Auxiliares
 
@@ -425,6 +489,113 @@ Al cargar frmMenu
 ### Relación con EnviadorPro/EnvioHuellasSQV
 - Comparten la misma base de datos de legisladores
 - La consola gestiona datos, los enviadores sincronizan huellas
+
+## Módulos Funcionales Detallados
+
+### Control del Sistema (`frmControlSistema`)
+Permite alternar el modo de identificación de legisladores:
+- **Identificación por Teclado**: Activa identificación manual desde la consola
+- **Identificación Biométrica**: Usa escáner dactilar de la banca (por defecto)
+
+```vb
+' Envía comando a todas las bancas
+MensajesSQV.IdentificacionPorTeclado "brc"
+```
+
+### Gestión de Usuarios (`FrmGestionarUsuarios`)
+ABM completo de usuarios del sistema con niveles de acceso:
+
+**Niveles de Usuario:**
+| Nivel | Tipo | Permisos |
+|-------|------|----------|
+| 0 | Administrador | Acceso total |
+| 1 | Administrador bancas | Solo configuración de bancas |
+| 2 | Operador Avanzado | Operación sin configuración |
+| 3 | Operador Básico | Operación limitada |
+| 4 | Operador Consulta | Solo consultas |
+
+**Operaciones:**
+- Nuevo usuario
+- Modificar usuario
+- Eliminar usuario
+- Validación de contraseña con confirmación
+
+### Abstención de Legisladores (`frmAbstenerLegisladores`)
+Gestiona las abstenciones previas a una votación:
+
+**Funcionalidades:**
+- Grilla con todos los legisladores activos
+- Selección individual (doble clic)
+- Selección por bloque político
+- Selección masiva (checkbox "Todos")
+- Envío de vector de abstención a sqv_server
+
+```vb
+' Vector de abstención
+MensajesSQV.AbstenerLeg "00000118;00000119;00000101;"
+```
+
+**Tablas Involucradas:**
+- `Vector` - Almacena vectores de identificación y abstención
+- `legisladores_activos` - Legisladores con banca asignada
+- `Bloques` - Bloques políticos
+
+### Log de Identificaciones (`frmLogIdentificaciones`)
+Consulta el registro de identificaciones biométricas:
+
+**Filtros Disponibles:**
+- Por diputado (apellido)
+- Por rango de fechas
+- Por rango de horas
+- Identificaciones manuales vs automáticas
+- Duplicidades (intentos de identificación múltiple)
+
+**Reportes:**
+- Listado ordenado por fecha
+- Listado ordenado alfabéticamente
+- Listado reducido (sin duplicados)
+
+**Consulta Principal:**
+```sql
+SELECT LogIdentificaciones.banca, LogIdentificaciones.hora,
+       LogIdentificaciones.fecha, Legisladores.nombre,
+       Legisladores.apellido, Legisladores.bloque_politico,
+       distritos.distrito AS Provincia
+FROM LogIdentificaciones
+INNER JOIN Legisladores ON Legisladores.id = LogIdentificaciones.id_diputado
+INNER JOIN distritos ON Legisladores.distrito = distritos.id_distrito
+WHERE duplicidad IS NULL
+ORDER BY fecha DESC, hora DESC, apellido
+```
+
+### Manifestaciones a Viva Voz (`frmManifestacionesVivavoz`)
+Registra manifestaciones verbales de legisladores durante votaciones:
+
+**Funcionalidades:**
+- Lista de diputados con manifestaciones
+- Editor de texto para cada manifestación
+- Agregar/eliminar diputados
+- Detección automática de cambios
+- Versiones de manifestación por acta
+
+**Tabla:** `manifestaciones_vivavoz`
+```sql
+-- Estructura
+periodo, sesion, nro_acta, version_acta,
+id_diputado, comentario, ultima_edicion
+```
+
+### Gestión de Reuniones (`frmReuniones`)
+Muestra las reuniones de un período legislativo:
+
+**Información por Reunión:**
+- Número de reunión
+- Número de sesión
+- Tipo de sesión
+- Fecha
+- Cantidad de actas
+
+**Navegación:** Doble clic abre `frmMostrarActas` con las actas de esa reunión
 
 ## Módulo de Estadísticas
 
