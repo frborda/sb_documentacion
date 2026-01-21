@@ -1,0 +1,47 @@
+{
+  "name": "@recinto/replier",
+  "version": "1.1.0",
+  "description": "Replier mantiene el estado de Recinto en memoria notificando los cambios a los webhooks suscriptos",
+  "repository": "https://git.hcdn.gob.ar/aplicaciones/recinto-monorepo.git",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon --exec babel-node -w src/**/*.* -w .env src/index.js",
+    "clean": "rimraf dist",
+    "build": "yarn clean && babel ./src --out-dir dist --copy-files",
+    "start": "node ./dist/index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "dependencies": {
+    "async-mutex": "^0.3.2",
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "morgan": "^1.10.0",
+    "query-string": "^7.0.1",
+    "rxjs": "^7.3.0",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6",
+    "twig": "^1.15.4",
+    "ulid": "^2.3.0",
+    "underscore": "^1.13.1",
+    "ws": "^8.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/eslint-parser": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "eslint": "7.12.1",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "4.2.1",
+    "nodemon": "^2.0.12",
+    "rimraf": "^3.0.2"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

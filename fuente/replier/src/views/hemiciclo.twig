@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hemiciclo</title>
+
+  <link href="assets/css/hemiciclo.css" rel="stylesheet">
+</head>
+<body>
+  <div class="cartel">
+    <div class="basculas-activas">
+      <span class="description">Basculas Activas</span>
+      <span class="value"></span>
+    </div>
+    <div class="identificados">
+      <span class="description">Identificaciones</span>
+      <span class="value"></span>
+    </div>
+  </div>
+
+  <div class="hemiciclo__container">
+    <div class="hemiciclo"></div>
+  </div>
+
+  <script src="assets/js/hemiciclo.js"></script>
+  <script>
+    const cache = {
+      bancas: {{bancas ? (bancas | json_encode | raw) : 'null'}},
+      totalBasculasActivas: {{totalBasculasActivas}},
+      totalIdentificaciones: {{totalIdentificaciones}}
+    }
+
+    const dom = {
+      cartel: document.querySelector('.cartel'),
+      basculasActivas: document.querySelector('.basculas-activas .value'),
+      identificados: document.querySelector('.identificados .value')
+    }
+
+    const render = () => {
+      dom.basculasActivas.innerText = cache.totalBasculasActivas
+      dom.identificados.innerText = cache.totalIdentificaciones
+
+      cache.bancas.forEach(b => {
+        // butacas activas
+        if (b.estado === 'sit_on') {
+          HEMICICLO.setearBordeBanca(b.numero, '#ffb4a2')
+          HEMICICLO.setearColorBanca(b.numero, '#6d6875')
+        } else {
+          HEMICICLO.setearBordeBanca(b.numero, '#6d6875')
+          HEMICICLO.setearColorBanca(b.numero, '#6d6875')
+        }
+
+        // identificados
+        if (b.id) {
+          HEMICICLO.setearColorBanca(b.numero, '#b5838d')
+        }
+      })
+    }
+
+    HEMICICLO.init('.hemiciclo').then(render)
+
+    const url = new URL('/ws', location.href)
+    url.protocol = 'wss'
+    const ws = new WebSocket(url.href)
+
+    ws.onopen = function() {
+      console.log("[WS] connection open")
+      console.log("[WS] => ping")
+      ws.send(JSON.stringify({type: 'ping'}))
+    }
+
+    ws.onmessage = function (evt) {
+      const msg = JSON.parse(evt.data)
+      switch(msg.type) {
+        case 'pong':
+          console.log("[WS] <= pong")
+          break;
+        case 'hemiciclo':
+          console.log("[WS] <= hemiciclo", msg.payload)
+          cache.bancas = msg.payload.bancas
+          cache.totalBasculasActivas = msg.payload.totalBasculasActivas
+          cache.totalIdentificaciones = msg.payload.totalIdentificaciones
+          render()
+          break;
+        default:
+          console.log("[WS] <=", msg.type, msg.payload)
+      }
+    }
+
+    ws.onclose = function() {
+      console.log("[WS] connection close")
+    }
+  </script>
+</body>
+</html>
